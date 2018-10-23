@@ -611,6 +611,13 @@ a.article-title:hover {
 .article-entry dl li {
   margin: 0.1em 0;
 }
+.article-entry ul li code,
+.article-entry ol li code,
+.article-entry dl li code {
+  color: #4d4d4c;
+  background: #eee;
+  border-radius: 3px;
+}
 .article-entry img,
 .article-entry video {
   max-width: 100%;
