@@ -1126,9 +1126,11 @@ a.article-title:hover {
 .article-entry pre,
 .article-entry code {
   font-family: "Source Code Pro", Monaco, Menlo, Consolas, monospace;
+  font-size: 0.95em;
+}
+.article-entry p code {
   color: #4d4d4c;
   background: #eee;
-  font-size: 0.95em;
   border-radius: 3px;
 }
 .article-entry code {

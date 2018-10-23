@@ -5,15 +5,20 @@
   
 
   
-  <title>Lunixy&#39;s personal blog</title>
+  <title>微信小程序的批量下载与上传 | Lunixy&#39;s personal blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Lunixy&#39;s personal blog">
-<meta property="og:url" content="https://lunixy.gitee.io/index.html">
+  <meta name="description" content="如果上传文件后要进行回调处理，在单个上传任务的场景下是很容易实现的，如果有多个上传任务要在同一时间点触发，并且在最后一个任务完成后实现回调呢？  1、常规思路假设有三个任务 1234567wx.downloadFile(file1, res =&amp;gt; &amp;#123;  wx.downloadFile(file2, res =&amp;gt; &amp;#123;    wx.downloadFile(file3,">
+<meta name="keywords" content="小程序,es6-promise">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序的批量下载与上传">
+<meta property="og:url" content="https://lunixy.gitee.io/2018/10/23/微信小程序的批量下载与上传/index.html">
 <meta property="og:site_name" content="Lunixy&#39;s personal blog">
+<meta property="og:description" content="如果上传文件后要进行回调处理，在单个上传任务的场景下是很容易实现的，如果有多个上传任务要在同一时间点触发，并且在最后一个任务完成后实现回调呢？  1、常规思路假设有三个任务 1234567wx.downloadFile(file1, res =&amp;gt; &amp;#123;  wx.downloadFile(file2, res =&amp;gt; &amp;#123;    wx.downloadFile(file3,">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-10-23T06:58:56.070Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lunixy&#39;s personal blog">
+<meta name="twitter:title" content="微信小程序的批量下载与上传">
+<meta name="twitter:description" content="如果上传文件后要进行回调处理，在单个上传任务的场景下是很容易实现的，如果有多个上传任务要在同一时间点触发，并且在最后一个任务完成后实现回调呢？  1、常规思路假设有三个任务 1234567wx.downloadFile(file1, res =&amp;gt; &amp;#123;  wx.downloadFile(file2, res =&amp;gt; &amp;#123;    wx.downloadFile(file3,">
   
   
     <link rel="icon" href="/favicon.png">
@@ -77,9 +82,7 @@
   </div>
 </header>
       <div id="outer" class="outer">
-        <section id="main">
-  
-    <article id="post-微信小程序的批量下载与上传" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-微信小程序的批量下载与上传" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
       <a href="/2018/10/23/微信小程序的批量下载与上传/" class="article-date">
@@ -98,8 +101,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/23/微信小程序的批量下载与上传/">微信小程序的批量下载与上传</a>
+    <h1 class="article-title" itemprop="name">
+      微信小程序的批量下载与上传
     </h1>
   
 
@@ -144,74 +147,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-微信小程序的拖拽与缩放" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-      <a href="/2018/10/22/微信小程序的拖拽与缩放/" class="article-date">
-  <time datetime="2018-10-22T06:56:50.000Z" itemprop="datePublished">2018-10-22</time>
-</a>
-    
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/微信小程序/">微信小程序</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/22/微信小程序的拖拽与缩放/">微信小程序的拖拽与缩放</a>
-    </h1>
+    <a href="/2018/10/22/微信小程序的拖拽与缩放/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">微信小程序的拖拽与缩放</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote><p>借助微信小程序的<code>movable-area</code>和<code>movable-view</code>组件，即可实现元素的拖拽、缩放功能。</p>
-<footer><strong>小程序</strong><cite><a href="https://developers.weixin.qq.com/miniprogram/dev/component/movable-view.html" target="_blank" rel="noopener">movable-area</a></cite></footer></blockquote>
-<p>本文以图片的拖拽、缩放为例进行展示，文章末尾有代码片段。</p>
-<h2 id="1、拖拽"><a href="#1、拖拽" class="headerlink" title="1、拖拽"></a>1、拖拽</h2><p>把<code>movable-view</code>的<code>direction</code>属性设置为<code>all</code>即可在<code>movable-area</code>上沿着上下左右四个方向拖拽。</p>
-<h2 id="2、双指缩放"><a href="#2、双指缩放" class="headerlink" title="2、双指缩放"></a>2、双指缩放</h2><p><code>movable-view</code>支持双指缩放，设置<code>scale</code>为<code>true</code>即可。但是双指缩放操作比较麻烦，而且不太好控制缩放程度，下面重点介绍自定义缩放功能。</p>
-<h2 id="3、自定义缩放"><a href="#3、自定义缩放" class="headerlink" title="3、自定义缩放"></a>3、自定义缩放</h2><p>为了方便操作，把图片加上边框和一个缩放按钮（右上角），并以这个缩放按钮的位置为基准进行整个<code>movable-view</code>的缩放操作：</p>
-<ol>
-<li>监听缩放按钮的<code>touch</code>相关事件，计算出缩放按钮<code>X</code>坐标的变化</li>
-<li>根据坐标变化量计算出缩放系数（比例）</li>
-<li>用这个系数去计算出新的<code>movable-view</code>宽高</li>
-</ol>
-<p>这里需要注意的一个问题是：每次缩放的过程中，要以<code>movable-view</code>初始的宽高为基准进行缩放，而不能以缩放过程中动态变化的<code>movable-view</code>的宽高进行缩放。</p>
-<p>正常连续缩放三次：<code>a*0.9</code> <code>a*0.8</code> <code>a*0.7</code><br>动态连续缩放三次：<code>a*0.9</code> <code>a*0.9*0.8</code> <code>a*0.9*0.8*0.7</code></p>
-<p>Tips：</p>
-<ul>
-<li><code>movable-area</code>中的<code>movable-view</code>位置是用左上角的位置来界定的，如果想以<code>movable-view</code>的中心点为基准进行缩放，那么就记录初始中心点的坐标，缩放后减去二分之一宽高既是<code>movable-view</code>的左上角新坐标</li>
-<li>缩放过程中去掉<code>movable-view</code>的动画，<code>animation</code>属性设置为<code>false</code>，否则感觉有点飘</li>
-</ul>
-<a href="wechatide://minicode/zf69jmmv7T30" target="_blank" rel="noopener">代码片段-元素的拖拽与缩放</a>，线上小程序请扫下方小程序码体验<br><br><img src="https://image.juzigo.com/wechat/illustrator/gh_6563f5c20b60_430.jpg" class="left" width="200" height="200">
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://lunixy.gitee.io/2018/10/22/微信小程序的拖拽与缩放/" data-id="cjnldqrn8000112cbtvmd0p78" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/小程序/">小程序</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
-
 
 </section>
         
